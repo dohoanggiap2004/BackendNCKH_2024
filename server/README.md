@@ -14,6 +14,9 @@ GOOGLE_CB=http://localhost:8000/auth/google/redirect<br>
 ACCESS_TOKEN_SECRET=e3b06608-f6ed-4b0f-87ce-21cecfd3ca25<br>
 REFRESH_TOKEN_SECRET=66cec4c6-ce91-4cec-b113-e2b7cc1a3f91<br>
 
+```terminal
+## Direct to server folder
+
 ## Install packages
 npm install
 
