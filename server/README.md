@@ -1,7 +1,7 @@
-## clone repository
+## Clone repository
 git clone https://github.com/dohoanggiap2004/BackendNCKH_2024.git
 
-## add '.env' file in server folder
+## Add '.env' file in server folder
 PORT=8000<br>
 DB_USER ="root"<br>
 DB_PASS=""<br>
@@ -14,10 +14,10 @@ GOOGLE_CB=http://localhost:8000/auth/google/redirect<br>
 ACCESS_TOKEN_SECRET=e3b06608-f6ed-4b0f-87ce-21cecfd3ca25<br>
 REFRESH_TOKEN_SECRET=66cec4c6-ce91-4cec-b113-e2b7cc1a3f91<br>
 
-## install packages
+## Install packages
 npm install
 
-## run sql file
+## Run sql file
 
-## run
+## Run server
 npm start
