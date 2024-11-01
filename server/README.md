@@ -17,7 +17,7 @@ REFRESH_TOKEN_SECRET=66cec4c6-ce91-4cec-b113-e2b7cc1a3f91<br>
 ## install packages
 npm install
 
-##run sql file
+## run sql file
 
 ## run
 npm start
