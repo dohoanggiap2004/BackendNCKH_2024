@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect:
       process.env
-        .DB_DIALECT /*mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
+        .DB_DIALECT,
     logging: false,
     define: {
       freezeTableName: true,

@@ -1,30 +1,29 @@
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-const pool = require("./dbConn"); // Import file db.js đã tạo ở trên
-
+const pool = require("./dbConn");
+const {sequelize} = require("../config/sequelizeConnect");
 const localPassport = () => {
-  passport.use(
-    new LocalStrategy(async function verify(username, password, done) {
-      const connection = await pool.getConnection();
-      try {
-        const sql = "SELECT * FROM users WHERE username = ?";
-        const [results] = await connection.execute(sql, [username]);
-        const user = results[0];
+    passport.use(
+        new LocalStrategy(async function verify(username, password, done) {
+            try {
+                const sql = "SELECT * FROM users WHERE username = ?";
+                const [results] = await sequelize.query(sql, {
+                    replacements: [username],
+                });
+                const user = results[0];
 
-        if (!user) return done(null, false, { message: "No user found" });
+                if (!user) return done(null, false, {message: "No user found"});
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return done(null, false, { message: "Wrong password" });
+                const isMatch = await bcrypt.compare(password, user.password);
+                if (!isMatch) return done(null, false, {message: "Wrong password"});
 
-        return done(null, user);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        if (connection) connection.release();
-      }
-    })
-  );
+                return done(null, user);
+            } catch (error) {
+                console.log(error);
+            }
+        })
+    );
 };
 
 module.exports = localPassport;

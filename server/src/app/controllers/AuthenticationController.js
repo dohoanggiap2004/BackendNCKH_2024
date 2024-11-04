@@ -1,6 +1,5 @@
 const {generateAccessToken, generateRefreshToken} = require('../../services/generateTokenService')
 const passport = require('passport')
-// const pool = require('../../config/dbConn')
 const { sequelize } = require('../../config/sequelizeConnect')
 class Authentication {
     //google oauth redirect
@@ -43,8 +42,6 @@ class Authentication {
                 return res.redirect('http://localhost:3000/')
             } catch (error) {
                 console.log(error);
-            } finally {
-                // if (connection) connection.release()
             }
         })(req, res, next);
     }
@@ -85,9 +82,9 @@ class Authentication {
                     maxAge: 15 * 60 * 1000, // Thời gian sống của cookie 15 phut
                 });
                 res.status(200).json({
+                    message: 'login local successfully',
                     error: 0
                 })
-
             } catch (error) {
                 console.log(error);
             }
@@ -134,6 +131,7 @@ class Authentication {
                     maxAge: 15 * 60 * 1000, // Thời gian sống của cookie 15 phut
                 });
                 res.status(200).json({
+                    message: 'login local admin successfully',
                     error: 0
                 })
             } catch (error) {

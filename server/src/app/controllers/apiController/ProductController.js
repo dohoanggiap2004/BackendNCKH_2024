@@ -4,18 +4,28 @@ const {
     getProductsByCategoryIdService,
     createProductService,
     updateProductService,
-    deleteProductService
+    deleteProductService,
+    countAllProductsService,
   } = require("../../../services/api/productService");
   class ProductController {
     async getProducts(req, res) {
       try {
-        const products = await getProductsService();
-  
+        if(!req?.query.page || !req?.query.limit){
+          return res.status(400).json({message: 'page and limit are required'});
+        }
+        const { page, limit } = req.query;
+        const offset = (page - 1) * limit;
+        const products = await getProductsService(limit, offset);
+        const totalProducts = await countAllProductsService();
+        const totalPage = Math.ceil(totalProducts / limit)
         if (!products) {
           return res.status(200).json({ message: "products not found" });
         }
   
         res.status(200).json({
+          totalProducts: totalProducts,
+          totalPage: totalPage,
+          currentPage: page,
           data: products,
         });
       } catch (error) {
@@ -123,4 +133,3 @@ const {
   }
   
   module.exports = new ProductController();
-  
