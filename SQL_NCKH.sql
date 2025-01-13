@@ -16,13 +16,18 @@ CREATE TABLE Promotions (
     promotionPeriod INT NOT NULL
 );
 
+CREATE TABLE refreshtokens(
+	token VARCHAR(255) PRIMARY KEY NOT NULL,
+    userId INT
+);
+
 CREATE TABLE Products (
     productId INT PRIMARY KEY AUTO_INCREMENT,
     productName VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     gender VARCHAR(10),
     size VARCHAR(50),
-    quantity INT,
+    stockQuantity INT,
     detail TEXT,
     introduction TEXT,
     careInstruction TEXT,
@@ -35,14 +40,14 @@ CREATE TABLE Products (
 CREATE TABLE Users (
     userId INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
     password VARCHAR(255) NOT NULL,
     fullname VARCHAR(255),
     gender VARCHAR(30),
     phoneNumber VARCHAR(15),
     dateOfBirth DATE,
     typeAcc VARCHAR(50),
-    isAdmin BOOLEAN,
+    role VARCHAR(25) DEFAULT 'user',
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -94,7 +99,7 @@ CREATE TABLE Color_Detail (
     imageURL VARCHAR(255),
     PRIMARY KEY (productId, colorId),
     FOREIGN KEY (productId) REFERENCES Products(productId) ON DELETE CASCADE,
-    FOREIGN KEY (colorId) REFERENCES Color(colorId) ON DELETE SET NULL
+    FOREIGN KEY (colorId) REFERENCES Color(colorId) ON DELETE CASCADE
 );
 
 CREATE TABLE User_Address (
@@ -143,7 +148,7 @@ INSERT INTO Promotions (discountPercentage, promotionPeriod) VALUES
 (25.00, 25);
 
 -- Insert data into Products table
-INSERT INTO Products (productName, price, gender, size, quantity, detail, introduction, careInstruction, categoryId, promotionId) VALUES
+INSERT INTO Products (productName, price, gender, size, stockQuantity, detail, introduction, careInstruction, categoryId, promotionId) VALUES
 ('iPhone 14', 999.99, 'Unisex', '6.1"', 50, 'Latest model', 'Introducing the iPhone 14', 'Handle with care', 2, 1),
 ('MacBook Pro', 1999.99, 'Unisex','16"', 30, '2023 model', 'MacBook Pro with M2 chip', 'Clean with dry cloth', 3, 2),
 ('T-shirt', 19.99, 'Men', 'L', 100, 'Comfortable cotton', 'New Men\'s T-shirt', 'Machine wash cold', 5, NULL),
@@ -155,12 +160,12 @@ INSERT INTO Products (productName, price, gender, size, quantity, detail, introd
 ('Fitbit Versa 3', 229.99, 'Unisex', 'One Size', 50, 'Fitness tracking smartwatch', 'Introducing Fitbit Versa 3', 'Avoid moisture', 8, NULL);
 
 -- Insert data into Users table
-INSERT INTO Users (username, email, password, fullname, gender, phoneNumber, dateOfBirth, typeAcc, isAdmin) VALUES
-('john_doe', 'john@example.com', 'password123', 'John Doe', 'Male', '1234567890', '1990-01-01', 'local', false),
-('jane_doe', 'jane@example.com', 'password123', 'Jane Doe', 'Female', '0987654321', '1992-02-02', 'local', true),
-('alice_smith', 'alice@example.com', 'password123', 'Alice Smith', 'Female', '1122334455', '1988-05-15', 'local', false),
-('bob_brown', 'bob@example.com', 'password123', 'Bob Brown', 'Male', '2233445566', '1985-08-30', 'google', true),
-('chris_jones', 'chris@example.com', 'password123', 'Chris Jones', 'Male', '9988776655', '1993-12-12', 'facebook', false);
+INSERT INTO Users (username, email, password, fullname, gender, phoneNumber, dateOfBirth, typeAcc, role) VALUES
+('john_doe', 'john@example.com', 'password123', 'John Doe', 'Male', '1234567890', '1990-01-01', 'local', 'user'),
+('jane_doe', 'jane@example.com', 'password123', 'Jane Doe', 'Female', '0987654321', '1992-02-02', 'local', 'user'),
+('alice_smith', 'alice@example.com', 'password123', 'Alice Smith', 'Female', '1122334455', '1988-05-15', 'local', 'user'),
+('bob_brown', 'bob@example.com', 'password123', 'Bob Brown', 'Male', '2233445566', '1985-08-30', 'google', 'user'),
+('chris_jones', 'chris@example.com', 'password123', 'Chris Jones', 'Male', '9988776655', '1993-12-12', 'facebook', 'user');
 
 -- Insert data into Vouchers table
 INSERT INTO Vouchers (expiryDate, voucherCode, description, discountValue) VALUES
