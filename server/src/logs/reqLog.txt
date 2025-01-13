@@ -1066,3 +1066,12 @@
 2024-11-04/03:19:59		fc5a85e1-0123-46ec-aefc-e50290ab89c3		GET	http://localhost:3000	 /api/statistics/products
 2024-11-04/03:19:59		2556ebc8-fa4f-4dcd-a615-e6adf99278b0		GET	http://localhost:3000	 /api/statistics/orders
 2024-11-04/03:20:23		0e9f7e76-f763-469c-a010-973ed19c72e7		GET	http://localhost:3000	 /api/statistics/users
+2024-11-21/08:41:35		1680ec00-59b9-40d0-8077-141453fd91c2		GET	undefined	 /api/users
+2024-11-21/08:46:44		f3e0cf96-5124-41df-b02f-0b5c05b2a522		OPTIONS	http://localhost:3000	 /auth/login
+2024-11-21/08:46:44		23ffdacd-6403-4f6a-ac66-955856fb8e4d		POST	http://localhost:3000	 /auth/login
+2024-11-21/08:46:44		d600887c-fa23-4bf9-8194-5a49343a9e55		GET	http://localhost:3000	 /refresh-token
+2024-11-21/08:47:45		405ab605-6d90-42a1-ab10-79e753930150		OPTIONS	http://localhost:3000	 /auth/login
+2024-11-21/08:47:45		809dfbc2-0ca2-4c9e-bbba-aa0abeaa5eb1		POST	http://localhost:3000	 /auth/login
+2024-11-21/08:53:07		d086aab6-1f95-43b4-b573-63d90efb6d19		GET	undefined	 /api/users
+2024-11-21/08:59:07		79383e32-3233-47b2-9ae6-4c72d6fad937		GET	undefined	 /api/users
+2024-11-21/09:02:12		0c3519b3-b11a-41d7-a91e-10f82dfa8fbc		GET	undefined	 /api/users
