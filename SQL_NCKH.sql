@@ -129,43 +129,71 @@ CREATE TABLE Posts (
 
 -- Insert data into Categories table
 INSERT INTO Categories (categoryName, parentCategoryId) VALUES
-('Electronics', NULL),
-('Mobile Phones', 1),
-('Laptops', 1),
-('Fashion', NULL),
-('Men', 4),
-('Women', 4),
-('Home Appliances', NULL),
-('Smart Watches', 1),
-('Accessories', 4);
+('Men', NULL),
+('Women', NULL),
+('Accessories', NULL);
 
 -- Insert data into Promotions table
 INSERT INTO Promotions (discountPercentage, promotionPeriod) VALUES
-(10.00, 30),
-(15.00, 15),
-(5.00, 60),
-(20.00, 20),
-(25.00, 25);
+(10, 30),
+(15, 15),
+(5, 60),
+(20, 20),
+(25, 25);
 
 -- Insert data into Products table
 INSERT INTO Products (productName, price, gender, size, stockQuantity, detail, introduction, careInstruction, categoryId, promotionId) VALUES
-('iPhone 14', 999.99, 'Unisex', '6.1"', 50, 'Latest model', 'Introducing the iPhone 14', 'Handle with care', 2, 1),
-('MacBook Pro', 1999.99, 'Unisex','16"', 30, '2023 model', 'MacBook Pro with M2 chip', 'Clean with dry cloth', 3, 2),
-('T-shirt', 19.99, 'Men', 'L', 100, 'Comfortable cotton', 'New Men\'s T-shirt', 'Machine wash cold', 5, NULL),
-('Samsung Galaxy S23', 899.99, 'Unisex', '6.2"', 70, 'Latest Android flagship', 'Introducing Galaxy S23', 'Handle with care', 2, 3),
-('Leather Jacket', 150.00, 'Men', 'M', 40, 'Genuine leather', 'Trendy leather jacket', 'Dry clean only', 5, 4),
-('Smart TV 55"', 750.00, 'Unisex', '55"', 25, '4K Ultra HD', 'Amazing picture quality', 'Clean with soft cloth', 7, NULL),
-('Wireless Earbuds', 150.00, 'Unisex', 'One Size', 80, 'Noise cancelling', 'Wireless earbuds with long battery life', 'Avoid moisture', 9, 5),
-('Yoga Pants', 35.99, 'Women', 'M', 120, 'Stretchable fabric', 'Comfortable yoga pants', 'Machine wash cold', 6, NULL),
-('Fitbit Versa 3', 229.99, 'Unisex', 'One Size', 50, 'Fitness tracking smartwatch', 'Introducing Fitbit Versa 3', 'Avoid moisture', 8, NULL);
+('Đầm ôm Tuysi Hiver', 1045000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Đầm ôm dáng A nhẹ nhàng giúp tôn lên đường cong tự nhiên của cơ thể, đồng thời che đi khuyết điểm một cách khéo léo.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo sơ mi lụa Ember', 973000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Với áo Ember, nàng sẽ cảm nhận được sự nhẹ nhàng và tinh tế trong từng chi tiết, khẳng định gu thời trang nữ tính và hiện đại!',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo vest Tuysi You Beige', 995000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Đầm ôm dáng A nhẹ nhàng giúp tôn lên đường cong tự nhiên của cơ thể, đồng thời che đi khuyết điểm một cách khéo léo.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Đầm nhung Velvet Black', 1183000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Đắm mình trong gam màu huyền bí và cảm nhận sự mềm mại của chất liệu nhung.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo khoác len Ôm cơ bản', 903000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Thiết kế tối giản nhưng không kém phần tinh tế, dành cho những cô nàng yêu thích phong cách thanh lịch và hiện đại.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo khoác len lông cừu merino', 1895000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Áo khoác len là item không thể thiếu vào những ngày đông. ',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo khoác len lông cừu', 1545000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Áo khoác len cổ V dài tay. Cài bằng hàng khuy kim loại phía trước vừa tạo điểm nhấn, vừa mang lại vẻ thanh lịch.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo peplum phối ren', 745000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Áo dáng peplum với phần tay ngắn và thân dài. Cổ vuông phối dây đan tạo kiểu. Chất liệu vải ren mềm, sang trọng, thân thiện với làn da.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+('Áo sơ mi Tuysi Peplum', 833000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Áo dáng peplum với phần tay ngắn và thân dài. Cổ vuông phối dây đan tạo kiểu. Chất liệu vải ren mềm, sang trọng, thân thiện với làn da.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+ ('Cosmos Set - Áo công sở peplum', 1113000, 'Women', 'S, M, L, XL', 50, 'Latest model', 'Áo dáng peplum với phần tay ngắn và thân dài. Cổ vuông phối dây đan tạo kiểu. Chất liệu vải ren mềm, sang trọng, thân thiện với làn da.',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 2, 1),
+  ('Áo thun Daily Metagent', 279300, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo thun cổ tròn, Thiết kế tay ngắn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Point Supima - Áo thun Regular', 489300, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo thun cổ tròn, Thiết kế tay ngắn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Endless Summer - Áo thun Regular Supima', 833000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo thun cổ tròn, Thiết kế tay ngắn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo thun polo dài tay', 300000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo Polo dài tay dáng regular fit, cổ đức cùng hàng 3 khuy cài. Dáng áo suông, cổ tay may bo co giãn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo Polo Modal cổ đức phối kẻ', 623000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo thun Polo cổ đức',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Knit Polo - Áo len cổ đức', 279300, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo Polo dài tay dáng regular fit, cổ đức cùng hàng 3 khuy cài. Dáng áo suông, cổ tay may bo co giãn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo khoác len', 716.000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Áo len dài tay',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo khoác phao siêu nhẹ', 777000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Chất liệu vải Polyester, bên trong lót bông tác dụng giữ ấm tốt vào những ngày đại hàn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo khoác chần bông', 777000, 'Men', 'S, M, L, XL', 50, 'Latest model', 'Chất liệu vải Polyester, bên trong lót bông tác dụng giữ ấm tốt vào những ngày đại hàn',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1),
+   ('Áo hoodie nỉ cổ mũ kéo khóa', 400000, 'Men', 'S, M, L, XL', 50, 'Latest model', ' Chất liệu: Sử dụng vải Interlock thành phần gồm 65%Cotton 30% Polyester 5%Spandex. ',
+ 'Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.', 1, 1);
+
 
 -- Insert data into Users table
 INSERT INTO Users (username, email, password, fullname, gender, phoneNumber, dateOfBirth, typeAcc, role) VALUES
-('john_doe', 'john@example.com', 'password123', 'John Doe', 'Male', '1234567890', '1990-01-01', 'local', 'user'),
-('jane_doe', 'jane@example.com', 'password123', 'Jane Doe', 'Female', '0987654321', '1992-02-02', 'local', 'user'),
-('alice_smith', 'alice@example.com', 'password123', 'Alice Smith', 'Female', '1122334455', '1988-05-15', 'local', 'user'),
-('bob_brown', 'bob@example.com', 'password123', 'Bob Brown', 'Male', '2233445566', '1985-08-30', 'google', 'user'),
-('chris_jones', 'chris@example.com', 'password123', 'Chris Jones', 'Male', '9988776655', '1993-12-12', 'facebook', 'user');
+('john_doe', 'john@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'John Doe', 'Male', '1234567890', '1990-01-01', 'local', 'user'),
+('jane_doe', 'jane@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'Jane Doe', 'Female', '0987654321', '1992-02-02', 'local', 'user'),
+('alice_smith', 'alice@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'Alice Smith', 'Female', '1122334455', '1988-05-15', 'local', 'user'),
+('user', 'user@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'Jane Doe', 'Female', '0987654321', '1992-02-02', 'local', 'user'),
+('admin', 'admin@example.com', '$2y$10$jOgSFLgF9.c0YDbasqnJpOAuM2Les78yvvaUjKmNuRcFYB2j8rPV.', 'Alice Smith', 'Female', '1122334455', '1988-05-15', 'local', 'user'),
+('bob_brown', 'bob@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'Bob Brown', 'Male', '2233445566', '1985-08-30', 'google', 'user'),
+('chris_jones', 'chris@example.com', '$2y$10$HLnqywpZj.W6ahbjHOGqH.QPOykIwR2Enjci2XWLyCPTTP6aP2kw2', 'Chris Jones', 'Male', '9988776655', '1993-12-12', 'facebook', 'user');
 
 -- Insert data into Vouchers table
 INSERT INTO Vouchers (expiryDate, voucherCode, description, discountValue) VALUES
@@ -191,21 +219,52 @@ INSERT INTO Products_Orders (productId, orderId, quantity, price) VALUES
 
 -- Insert data into Color table
 INSERT INTO Color (colorName, colorRGB) VALUES
-('Black', '#000000'),
-('Silver', '#C0C0C0'),
-('Blue', '#0000FF'),
-('Gray', '#808080'),
-('Brown', '#A52A2A'),
-('White', '#FFFFFF');
+('Đen', '#000000'),
+('Be', '#CAA782'),
+('Xanh dương', '#0000FF'),
+('Ghi', '#808080'),
+('Nâu', '#A52A2A'),
+('Trắng', '#FFFFFF'),
+('Đỏ mận', '#682632'),
+('Xanh lá', '#265A40');
 
 -- Insert data into Color_Detail table
 INSERT INTO Color_Detail (productId, colorId, imageURL) VALUES
-(1, 1, 'http://example.com/images/iphone_black.jpg'),
-(2, 2, 'http://example.com/images/macbook_silver.jpg'),
-(3, 3, 'http://example.com/images/tshirt_blue.jpg'),
-(4, 4, 'http://example.com/images/galaxy_gray.jpg'),
-(5, 5, 'http://example.com/images/jacket_brown.jpg'),
-(6, 1, 'http://example.com/images/tv_black.jpg');
+(1, 1, 'http://localhost:8000/img/women1.1.webp'),
+(1, 4, 'http://localhost:8000/img/women1.2.webp'),
+(2, 6, 'http://localhost:8000/img/women2.1.webp'),
+(2, 1, 'http://localhost:8000/img/women2.2.webp'),
+(3, 2, 'http://localhost:8000/img/women3.1.webp'),
+(4, 1, 'http://localhost:8000/img/women4.1.webp'),
+(4, 7, 'http://localhost:8000/img/women4.2.webp'),
+(5, 1, 'http://localhost:8000/img/women5.1.webp'),
+(5, 7, 'http://localhost:8000/img/women5.2.webp'),
+(6, 5, 'http://localhost:8000/img/women6.1.jpg'),
+(6, 2, 'http://localhost:8000/img/women6.2.jpg'),
+(7, 4, 'http://localhost:8000/img/women7.1.jpg'),
+(7, 6, 'http://localhost:8000/img/women7.2.jpg'),
+(8, 2, 'http://localhost:8000/img/women8.1.webp'),
+(8, 6, 'http://localhost:8000/img/women8.2.webp'),
+(9, 6, 'http://localhost:8000/img/women9.1.webp'),
+(9, 1, 'http://localhost:8000/img/women9.2.webp'),
+(10, 1, 'http://localhost:8000/img/women10.1.webp'),
+(11, 1, 'http://localhost:8000/img/men1.1.webp'),
+(12, 1, 'http://localhost:8000/img/men2.1.jpg'),
+(13, 6, 'http://localhost:8000/img/men3.1.jpg'),
+(14, 1, 'http://localhost:8000/img/men4.1.jpg'),
+(14, 8, 'http://localhost:8000/img/men4.2.jpg'),
+(15, 5, 'http://localhost:8000/img/men5.1.jpg'),
+(15, 6, 'http://localhost:8000/img/men5.2.jpg'),
+(16, 4, 'http://localhost:8000/img/men6.1.jpg'),
+(16, 1, 'http://localhost:8000/img/men6.2.jpg'),
+(17, 4, 'http://localhost:8000/img/men7.1.jpg'),
+(17, 8, 'http://localhost:8000/img/men7.2.jpg'),
+(18, 8, 'http://localhost:8000/img/men8.1.jpg'),
+(18, 1, 'http://localhost:8000/img/men8.2.jpg'),
+(19, 4, 'http://localhost:8000/img/men9.1.jpg'),
+(19, 1, 'http://localhost:8000/img/men9.2.jpg'),
+(20, 4, 'http://localhost:8000/img/men10.1.jpg'),
+(20, 1, 'http://localhost:8000/img/men10.2.jpg');
 
 -- Insert data into User_Address table
 INSERT INTO User_Address (fullName, phoneNumber, addressDetail, ward, district, city, userId) VALUES
