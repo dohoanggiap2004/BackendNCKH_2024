@@ -6,12 +6,16 @@ const {
     updateProductService,
     deleteProductService,
     countAllProductsService,
+    getAllProductsSerive
   } = require("../../../services/api/productService");
   class ProductController {
     async getProducts(req, res) {
       try {
         if(!req?.query.page || !req?.query.limit){
-          return res.status(400).json({message: 'page and limit are required'});
+          const products = await getAllProductsSerive();
+          return res.status(200).json({
+            data: products,
+          });
         }
         const { page, limit } = req.query;
         const offset = (page - 1) * limit;

@@ -83,10 +83,10 @@ class UserController {
 
   async deleteUser(req, res) {
     try {
-      if (!req?.body)
+      if (!req?.query)
         return res.status(400).json({ message: "User information is required" });
 
-      const userId = req.body.userId;
+      const userId = req.query.userId;
       const result = await deleteUserService(userId);
       if (result === 0) return res.status(200).json({ message: "No user be deleted" });
 

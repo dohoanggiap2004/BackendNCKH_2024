@@ -119,7 +119,7 @@ class Authentication {
                     }
                 );
                 res.cookie("refreshToken", refreshToken, {
-                    httpOnly: true, // Cookie chỉ được gửi qua HTTP (không thể truy cập qua JavaScript)
+                    httpOnly: false, // Cookie chỉ được gửi qua HTTP (không thể truy cập qua JavaScript)
                     secure: true, // Chỉ gửi cookie qua HTTPS
                     sameSite: "Strict", // Ngăn tấn công CSRF
                     maxAge: 7 * 24 * 60 * 60 * 1000, // Thời gian sống của cookie (7 ngày)

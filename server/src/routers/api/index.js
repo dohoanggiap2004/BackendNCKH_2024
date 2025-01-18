@@ -12,6 +12,7 @@ const productOrderRouter = require('./productOrder')
 const promotionRouter = require('./promotion')
 const userAddressRouter = require('./userAddress')
 const voucherRouter = require('./voucher')
+const statisticRouter = require('./statistic')
 
 router.use('/users', userRouter)
 router.use('/colors', colorRouter)
@@ -25,5 +26,6 @@ router.use('/product-order', productOrderRouter)
 router.use('/promotions', promotionRouter)
 router.use('/user-address', userAddressRouter)
 router.use('/vouchers', voucherRouter)
+router.use('/statistics', statisticRouter)
 
 module.exports = router

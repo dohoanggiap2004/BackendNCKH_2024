@@ -21,6 +21,25 @@ const getProductsService = async (limit, offset) => {
     return normalizeProductData(results)
 };
 
+const getAllProductsSerive = async () => {
+  const [results] = await sequelize.query(`
+    SELECT 
+        p.*,
+        cd.imageURL,
+        c.colorId,
+        c.colorName
+    FROM 
+        products AS p
+    LEFT JOIN 
+        color_detail AS cd ON p.productId = cd.productId
+    LEFT JOIN 
+        color AS c ON cd.colorId = c.colorId
+  `);
+
+  // Xử lý dữ liệu để nhóm màu sắc theo sản phẩm
+  return normalizeProductData(results)
+}
+
 const countAllProductsService = async () => {
   return await Product.count();
 }
@@ -93,4 +112,5 @@ module.exports = {
   createProductService,
   updateProductService,
   deleteProductService,
+  getAllProductsSerive,
 };

@@ -1,7 +1,12 @@
 
 const { User } = require("../../app/models");
 const getUsersService = async () => {
-  return await User.findAll();
+    const users = await User.findAll({
+        where: { role: 'user' },
+        attributes: { exclude: ['password'] },
+    });
+    return users;
+
 };
 
 const getUserByIdService = async (userId) => {
